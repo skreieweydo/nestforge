@@ -1,3 +1,11 @@
 #!/usr/bin/env bash
 
-printf 'NestForge is running.\n'
+set -o nounset
+set -o pipefail
+
+if ! mkdir -- nest; then
+	printf 'nestforge: could not create directory: nest \n' >&2
+	exit 1
+fi
+
+printf 'Created empty directory: nest\n'
